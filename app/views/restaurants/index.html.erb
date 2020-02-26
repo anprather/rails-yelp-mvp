@@ -1,0 +1,26 @@
+
+<h1>Yelp Restaurants</h1>
+
+<div class="container-restaurants">
+  <%  @restaurants.each do |resto| %>
+      <div class="restaurant">
+        <div class="restaurant-name">
+          <%= link_to resto.name, restaurant_url(resto.id) %>
+        </div>
+        <div class="restaurant-category">
+          <%= resto.category %>
+        </div>
+        <div class="restaurant-address">
+          <%= resto.address %>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+<br>
+
+<div class="add-restaurant">
+  <%= link_to new_restaurant_path do%>
+    <i class="fas fa-plus"></i> Add a restaurant
+  <% end %>
+</div>
